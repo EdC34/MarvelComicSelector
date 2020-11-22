@@ -1,10 +1,18 @@
 body {
-  background-color: darkred;
-  color: black;
+  background-image: url("./images/marvel-1641554_1920.jpg");
+  background-repeat: repeat-x;
+  color: whitesmoke;
   width: 100%;
   position: fixed;
   top: 3rem;
   overflow-y: scroll;
+}
+
+footer {
+  background-color: red;
+  display: flex;
+  align-items: center;
+  position: fixed;
 }
 
 .app {
@@ -22,8 +30,8 @@ body {
 }
 
 .nav__section {
-  background-color: white;
-  color: red;
+  background-color: red;
+  color: whitesmoke;
   position: fixed;
   top: 0;
   left: 0;
@@ -36,7 +44,7 @@ body {
 
 .nav__section__api-link {
   text-decoration: none;
-  color: red;
+  color: whitesmoke;
 }
 
 .nav__section__items {
