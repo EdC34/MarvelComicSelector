@@ -1,7 +1,7 @@
 body {
-  background-image: url("./images/marvel-1641554_1920.jpg");
+  /* background-image: url("./images/marvel-1641554_1920.jpg"); */
   background-repeat: repeat-x;
-  color: whitesmoke;
+  /* color: whitesmoke; */
   width: 100%;
   position: fixed;
   top: 3rem;
@@ -13,6 +13,7 @@ footer {
   display: flex;
   align-items: center;
   position: fixed;
+  bottom: 0;
 }
 
 .app {
@@ -25,9 +26,9 @@ footer {
   text-align: center;
 }
 
-.app__comic-image-url {
+/* .app__comic-image-url {
   width: 100%;
-}
+} */
 
 .nav__section {
   background-color: red;

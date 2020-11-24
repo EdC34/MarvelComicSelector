@@ -1,7 +1,7 @@
 const appDiv = document.querySelector('.app');
 const appHeader = document.querySelector('.header');
 const publicKey = "020fa7dbd3dcaff71a1a678e2899dc21";
-const hash = "383389ef7c69305f8ac2cea4123e36d5";
+const hash = "299881e8381d53687c732bc629e3eee1";
 let comicBtn;
 
 const navElement = function(){
@@ -19,7 +19,7 @@ const nav = function(){
     <div class="nav__section">
     
     <h3 class="nav__section__items nav__section__comic">Pick a new comic!</h3>
-    <a class="nav__section_api-link" href=" " target="_blank"></a><h3 class="nav__section__items nav__section__api-link"> Marvel API</h3>
+    <a class="nav__section_api-link" href="http://marvel.com" target="_blank"><h3 class="nav__section__items nav__section__api-link"> Marvel API</h3></a>
     </div>
     `
 }
@@ -27,13 +27,18 @@ const nav = function(){
  
 
 const getComic = function(){
-    fetch(`http(s)://gateway.marvel.com/v1/public/comics?ts=1&apikey=${publicKey}&hash=${hash}`)
+    fetch(`https://gateway.marvel.com/v1/public/comics?ts=2&apikey=${publicKey}&hash=${hash}`)
     .then(res => res.json())
     .then(comic => {
-        const comicTitle = comic.title;
-        const comicIssue = comic.issueNumber;
-        const comicImageURL = comic.thumbnail;
-        const comicURL = comic.url;
+        const randomComic = Math.floor(Math.random()*20);
+        console.log(comic);
+        console.log(randomComic);
+        const comicTitle = comic.data.results[randomComic].title;
+        const comicIssue = comic.data.results[randomComic].issueNumber;
+        const comicImgPath = comic.data.results[randomComic].thumbnail.path;
+        const comicImgExtension = comic.data.results[randomComic].thumbnail.extension;
+        const comicImageURL = comicImgPath + "/standard_fantastic." + comicImgExtension;
+        const comicURL = comic.data.results[randomComic].urls[0].url;
         console.log(comicTitle);
         console.log(comicIssue);
         console.log(comicImageURL);
