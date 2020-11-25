@@ -1,11 +1,11 @@
 body {
-  /* background-image: url("./images/marvel-1641554_1920.jpg"); */
+  background-image: url("./images/marvel-1641554_1920.jpg");
+  font-family: "Bangers", cursive;
   background-repeat: repeat-x;
-  /* color: whitesmoke; */
+  color: whitesmoke;
   width: 100%;
-  position: fixed;
-  top: 3rem;
   overflow-y: scroll;
+  z-index: -1;
 }
 
 footer {
@@ -18,7 +18,7 @@ footer {
 
 .app {
   max-width: 900px;
-  width: 80%;
+  width: 100%;
   margin: 0 auto;
 }
 
@@ -26,13 +26,44 @@ footer {
   text-align: center;
 }
 
-/* .app__comic-image-url {
-  width: 100%;
-} */
+.comic__display {
+  display: flex;
+  flex-direction: column;
+  color: whitesmoke;
+  z-index: +1;
+}
+
+.app__comic-image-url {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 40%;
+  height: 80%;
+  z-index: +3;
+}
+
+.app__comic-title {
+  background-color: red;
+  color: whitesmoke;
+  opacity: 0.8;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  font-size: xx-large;
+}
+
+.app__comic-issue {
+  display: flex;
+  justify-content: center;
+  background-color: red;
+  color: whitesmoke;
+  opacity: 0.8;
+}
 
 .nav__section {
   background-color: red;
   color: whitesmoke;
+  opacity: 1;
   position: fixed;
   top: 0;
   left: 0;
@@ -41,6 +72,7 @@ footer {
   line-height: 2rem;
   display: flex;
   justify-content: space-around;
+  z-index: 0;
 }
 
 .nav__section__api-link {

@@ -8,7 +8,6 @@ const navElement = function(){
     appHeader.innerHTML= nav();
     comicBtn = document.querySelector('.nav__section__comic');
     comicBtn.addEventListener('click', function(){
-        alert('new comic here')
         getComic()
         loadComic()
     })
@@ -37,7 +36,7 @@ const getComic = function(){
         const comicIssue = comic.data.results[randomComic].issueNumber;
         const comicImgPath = comic.data.results[randomComic].thumbnail.path;
         const comicImgExtension = comic.data.results[randomComic].thumbnail.extension;
-        const comicImageURL = comicImgPath + "/standard_fantastic." + comicImgExtension;
+        const comicImageURL = comicImgPath + "/portrait_uncanny." + comicImgExtension;
         const comicURL = comic.data.results[randomComic].urls[0].url;
         console.log(comicTitle);
         console.log(comicIssue);
@@ -50,9 +49,11 @@ const getComic = function(){
 
 const loadComic = function(comicTitle, comicIssue, comicImageURL, comicURL){
             return `
-            <h3 class="app__comic-title">${comicTitle}</h3>
-            <h3 class="app__comic-issue">${comicIssue}</h3>
+            <div class="comic__display">
+            <h3 class="app__comic-title">Title: ${comicTitle}</h3>
+            <h3 class="app__comic-issue">Issue #: ${comicIssue}</h3>
             <a class="app__comic-url" href='${comicURL}' target='_blank'><img class="app__comic-image-url" src='${comicImageURL}'></a>
+            </div>
             `
         }
 
