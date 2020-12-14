@@ -23,7 +23,9 @@ const nav = function(){
     `
 }
 
- 
+ function getRandomComic (min, max) {
+     return Math.floor(Math.random() * (max - min + 1)) + min;
+ }
 
 const getComic = function(){
     fetch(`https://gateway.marvel.com/v1/public/comics?ts=2&apikey=${publicKey}&hash=${hash}`)
